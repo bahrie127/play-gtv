@@ -7,10 +7,14 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 scalaVersion := "2.11.6"
 
 libraryDependencies ++= Seq(
-  jdbc,
   cache,
   ws,
-  specs2 % Test
+  specs2 % Test,
+  "org.mariadb.jdbc" % "mariadb-java-client" % "1.2.3",
+  "com.typesafe.slick" %% "slick-hikaricp" % "3.1.0",
+  "com.typesafe.slick" %% "slick" % "3.1.0",
+  "com.typesafe.slick" %% "slick-codegen" % "3.1.0",
+  "com.jason-goodwin" %% "authentikat-jwt" % "0.4.1"
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
